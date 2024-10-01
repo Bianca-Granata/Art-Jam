@@ -1,15 +1,22 @@
-/**
- * Art Jam 
- * 
- * Bianca Granata
- */
-/**Art Jam draft
+
+/**Art Jam
  * Bianca Granata
  * 
  * a weird old TV with only one channel...
  */
 
 
+"use strict";
+
+/**let illusion = {
+  x: 200,
+  y: 200,
+  size: 1,
+  minSize: 0,
+  maxSize: 400,
+  fill: 200
+
+} */
 // This creates the canvas
 function setup() {
   createCanvas(1000, 480);
@@ -19,7 +26,7 @@ function setup() {
 function draw() {
   background(0, 0, 0);
   drawTv();
-  drawScreen();
+  drawIlusion();
 
 }
 
@@ -82,11 +89,23 @@ function drawTv() {
   circle(170, 390, 50, 25);
   pop();
 
-  //the TV decor
-  push();
-  stroke();
-  fill();
-  pop();
-
 }
+// draws the illusion inside the screen
+function drawIlusion() {
+  // draws each circle in the TV
+  push();
+  stroke(0, 0, 0);
+  strokeWeight(15);
+  fill(255, 255, 255);
+  circle(350, 220, 400, 40);
+  circle(350, 220, 350, 40);
+  circle(350, 220, 300, 40);
+  circle(350, 220, 250, 40);
+  circle(350, 220, 200, 40);
+  circle(350, 220, 150, 40);
+  circle(350, 220, 100, 40);
+  circle(350, 220, 50, 40);
+  circle(350, 220, 5, 40);
 
+  pop();
+}
