@@ -47,5 +47,46 @@ function drawTv() {
   rect(150, 100, 400, 250);
   pop();
 
+  //The non-functional buttons 
+  push();
+  stroke(245, 8, 108);
+  fill(8, 48, 245);
+  circle(520, 390, 50, 25);
+  pop();
+
+  //outer button
+  push();
+  stroke(245, 8, 108);
+  noFill();
+  circle(520, 390, 60, 25);
+  pop();
+
+  //smaller button
+  push();
+  stroke(245, 8, 103);
+  fill(63, 8, 245);
+  circle(450, 390, 35, 25);
+  pop();
+
+  //left button
+  push();
+  stroke(55, 8, 245);
+  fill(245, 8, 111);
+  circle(170, 390, 35, 25);
+  pop();
+
+  //outer of the small left button
+  push();
+  stroke(8, 48, 245);
+  noFill();
+  circle(170, 390, 50, 25);
+  pop();
+
+  //the TV decor
+  push();
+  stroke();
+  fill();
+  pop();
+
 }
 
