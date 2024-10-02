@@ -5,21 +5,9 @@
  * a weird old TV with only one channel...
  */
 
-
-"use strict";
-
-/**let illusion = {
-  x: 200,
-  y: 200,
-  size: 1,
-  minSize: 0,
-  maxSize: 400,
-  fill: 200
-
-} */
 // This creates the canvas
 function setup() {
-  createCanvas(1000, 480);
+  createCanvas(860, 480);
 }
 
 //the black background
@@ -27,6 +15,7 @@ function draw() {
   background(0, 0, 0);
   drawTv();
   drawIlusion();
+
 
 }
 
@@ -50,7 +39,7 @@ function drawTv() {
   //The screen 
   push();
   stroke(92, 92, 92);
-  fill(255, 255, 255);
+  fill(mouseX, mouseY, 255);
   rect(150, 100, 400, 250);
   pop();
 
@@ -96,7 +85,7 @@ function drawIlusion() {
   push();
   stroke(0, 0, 0);
   strokeWeight(15);
-  fill(255, 255, 255);
+  fill(mouseX, mouseY, 255);
   circle(350, 220, 400, 40);
   circle(350, 220, 350, 40);
   circle(350, 220, 300, 40);
