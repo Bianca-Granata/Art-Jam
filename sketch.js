@@ -2,10 +2,22 @@
 /**Art Jam
  * Bianca Granata
  * 
- * a weird old TV with only one channel...
+ * a weird old TV, with moving the mouse around allows for the colors to change as well as the movement 
+ * of the screen.
  */
 
 // This creates the canvas
+
+"use strict";
+//the illusion
+let drawIllusion = {
+  x: 350,
+  y: 220,
+  size: 1,
+  minSize: 20,
+  maxSize: 400
+
+}
 function setup() {
   createCanvas(860, 480);
 }
@@ -15,9 +27,12 @@ function draw() {
   background(0, 0, 0);
   drawTv();
   drawIlusion();
-
+  // this is meant for the  illusion to get bigger
+  drawIllusion.size = drawIlusion.size + 1;
+  drawIllusion.size = constrain(drawIlusion.size, drawIlusion.minSize, drawIlusion.maxSize);
 
 }
+
 
 // the magnificent construction of the TV
 function drawTv() {
@@ -29,11 +44,12 @@ function drawTv() {
   rect(100, 50, 500, 380);
   pop();
 
-  //tv border
+  //the yellow border of the tv
   push();
-  stroke(255, 255, 255);
+  stroke(255, 255, 0);
+  strokeWeight(5);
   noFill();
-  rect(110, 60, 510, 390);
+  rect(100, 50, 500, 380);
   pop();
 
   //The screen 
@@ -79,6 +95,7 @@ function drawTv() {
   pop();
 
 }
+
 // draws the illusion inside the screen
 function drawIlusion() {
   // draws each circle in the TV
@@ -98,3 +115,4 @@ function drawIlusion() {
 
   pop();
 }
+
