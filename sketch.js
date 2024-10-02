@@ -14,7 +14,7 @@ let drawIllusion = {
   x: 350,
   y: 220,
   size: 1,
-  minSize: 20,
+  minSize: 0,
   maxSize: 400
 
 }
@@ -26,13 +26,13 @@ function setup() {
 function draw() {
   background(0, 0, 0);
   drawTv();
+  drawScreen();
   drawIlusion();
-  // this is meant for the  illusion to get bigger
-  drawIllusion.size = drawIlusion.size + 1;
-  drawIllusion.size = constrain(drawIlusion.size, drawIlusion.minSize, drawIlusion.maxSize);
+  // this is meant for the  illusion to get bigger 
+  drawIllusion.size = drawIllusion.size + 1;
+  drawIllusion.size = constrain(drawIllusion.size, drawIllusion.minSize, drawIllusion.maxSize);
 
 }
-
 
 // the magnificent construction of the TV
 function drawTv() {
@@ -50,13 +50,6 @@ function drawTv() {
   strokeWeight(5);
   noFill();
   rect(100, 50, 500, 380);
-  pop();
-
-  //The screen 
-  push();
-  stroke(92, 92, 92);
-  fill(mouseX, mouseY, 255);
-  rect(150, 100, 400, 250);
   pop();
 
   //The non-functional buttons 
@@ -95,6 +88,14 @@ function drawTv() {
   pop();
 
 }
+function drawScreen() {
+  //The screen 
+  push();
+  stroke(92, 92, 92);
+  fill(mouseX, mouseY, 255);
+  rect(150, 100, 400, 250);
+  pop();
+}
 
 // draws the illusion inside the screen
 function drawIlusion() {
@@ -103,8 +104,7 @@ function drawIlusion() {
   stroke(0, 0, 0);
   strokeWeight(15);
   fill(mouseX, mouseY, 255);
-  circle(350, 220, 400, 40);
-  circle(350, 220, 350, 40);
+
   circle(350, 220, 300, 40);
   circle(350, 220, 250, 40);
   circle(350, 220, 200, 40);
